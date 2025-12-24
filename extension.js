@@ -11,6 +11,10 @@ const fs = require('fs');
 const path = require('path');
 const config = require('./config');
 
+// Get version from package.json safely at module load time
+const packageInfo = require('./package.json');
+const EXTENSION_VERSION = packageInfo.version;
+
 let statusBarItem;
 let isRunning = false;
 let cdpSocket = null;
@@ -173,7 +177,7 @@ function getSettingsHTML(context) {
             -->
 
             <footer style="margin-top: 30px; color: var(--vscode-descriptionForeground);">
-                <p>Auto Accept Agent v${require('./package.json').version}</p>
+                <p>Auto Accept Agent v${EXTENSION_VERSION}</p>
             </footer>
         </body>
         </html>

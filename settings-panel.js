@@ -240,8 +240,9 @@ function getWebviewContent(context) {
                 
                 function toggleBackground() {
                     vscode.postMessage({ command: 'toggleBackgroundMode' });
-                    // Refresh page after toggle
-                    setTimeout(() => location.reload(), 100);
+                    // Brief delay to allow message processing before page refresh
+                    const REFRESH_DELAY_MS = 100;
+                    setTimeout(() => location.reload(), REFRESH_DELAY_MS);
                 }
 
                 // PAYMENT FUNCTIONS - COMMENTED OUT

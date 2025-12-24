@@ -221,11 +221,21 @@
             const status = isCompleted ? 'DONE' : 'WORKING';
             const color = isCompleted ? '#4CAF50' : '#9C27B0';
             
-            slot.innerHTML = `
-                <span style="color: ${color};">●</span>
-                <span>${name}</span>
-                <span style="float: right; color: ${color};">${status}</span>
-            `;
+            // Use textContent to prevent XSS from tab names
+            const indicator = document.createElement('span');
+            indicator.style.color = color;
+            indicator.textContent = '●';
+            
+            const nameSpan = document.createElement('span');
+            nameSpan.textContent = name;
+            
+            const statusSpan = document.createElement('span');
+            statusSpan.style.cssText = `float: right; color: ${color};`;
+            statusSpan.textContent = status;
+            
+            slot.appendChild(indicator);
+            slot.appendChild(nameSpan);
+            slot.appendChild(statusSpan);
             overlay.appendChild(slot);
         });
     }
