@@ -1,5 +1,7 @@
 # Antigravity Auto Accept
 
+> **🎉 All Pro features are temporarily FREE!** Due to payment system maintenance, all Pro features are unlocked for everyone. Thank you for your patience!
+
 ## Instantly accepts agent file edits and terminal commands for you.
 
 Supported agent actions:
@@ -17,7 +19,7 @@ Using background global detection, auto accept agent manages all agent tasks, ac
 
 ## Core Features
 
-### Background Automation (Pro)
+### Background Automation (Pro - Currently Free!)
 Execute agent tasks in all conversations continuously without manual intervention.
 
 ### Real-time Status Tracking
